@@ -408,7 +408,16 @@ require('lazy').setup {
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
+      {
+        'j-hui/fidget.nvim',
+        opts = {
+            notification = {
+              window = {
+                winblend = 0, -- Background color opacity in the notification window
+              }
+            }
+        }
+      }
     },
     config = function()
       -- Brief Aside: **What is LSP?**
@@ -725,6 +734,9 @@ require('lazy').setup {
     lazy = false, -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
+      require('tokyonight').setup {
+        transparent = true,
+      }
       -- Load the colorscheme here
       vim.cmd.colorscheme 'tokyonight-night'
 
