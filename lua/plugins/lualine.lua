@@ -7,7 +7,18 @@ return {
         theme = 'auto',
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
-        ignore_focus = {},
+        ignore_focus = {
+          'dashboard',
+          'startify',
+          'NvimTree',
+          'vista',
+          'dbui',
+          'packer',
+          'lazy',
+          'spectre_panel',
+          'qf',
+          'help',
+        },
         always_divide_middle = true,
         globalstatus = false,
         refresh = {
@@ -36,7 +47,7 @@ return {
       winbar = {},
       inactive_winbar = {},
       extensions = {
-        'neo-tree',
+        'nvim-tree',
       },
     }
   end,
